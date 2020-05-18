@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wj1-7q-W4A">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Visualisation View Controller-->
+        <scene sceneID="ZfM-Ax-xQG">
+            <objects>
+                <viewController storyboardIdentifier="FirstPage" id="wj1-7q-W4A" customClass="VisualisationViewController" customModule="task10" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zbm-Xp-QBT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="PqA-u2-FAQ">
+                                <rect key="frame" x="16" y="106" width="288" height="308"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="hIa-zf-OIQ">
+                                        <rect key="frame" x="0.0" y="55.5" width="288" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hIa-zf-OIQ" id="tZV-UV-lgP">
+                                            <rect key="frame" x="0.0" y="0.0" width="288" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wj1-7q-W4A" id="xKR-4K-Owz"/>
+                                    <outlet property="delegate" destination="wj1-7q-W4A" id="WEJ-jI-vyV"/>
+                                </connections>
+                            </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tbe-wM-9k8">
+                                <rect key="frame" x="107" y="434" width="106" height="33"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                                <state key="normal" title="Next iteration">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextTapped:" destination="wj1-7q-W4A" eventType="touchUpInside" id="Lcs-fe-WP1"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="YMV-IP-api">
+                                <rect key="frame" x="12.5" y="45" width="295" height="32"/>
+                                <segments>
+                                    <segment title="Bubble"/>
+                                    <segment title="Quick"/>
+                                    <segment title="Insertion"/>
+                                    <segment title="Merge"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentTapped:" destination="wj1-7q-W4A" eventType="valueChanged" id="Wy3-lW-CrR"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YMV-IP-api" firstAttribute="top" secondItem="I53-nk-zpP" secondAttribute="top" constant="45" id="ABQ-a8-8cn"/>
+                            <constraint firstItem="PqA-u2-FAQ" firstAttribute="centerY" secondItem="Zbm-Xp-QBT" secondAttribute="centerY" constant="20" id="Ar8-NC-UQ8"/>
+                            <constraint firstItem="PqA-u2-FAQ" firstAttribute="centerX" secondItem="Zbm-Xp-QBT" secondAttribute="centerX" id="Bip-C9-Os6"/>
+                            <constraint firstItem="tbe-wM-9k8" firstAttribute="top" secondItem="PqA-u2-FAQ" secondAttribute="bottom" constant="20" id="Hih-wH-gDr"/>
+                            <constraint firstItem="tbe-wM-9k8" firstAttribute="centerX" secondItem="Zbm-Xp-QBT" secondAttribute="centerX" id="Kui-qk-TfQ"/>
+                            <constraint firstItem="PqA-u2-FAQ" firstAttribute="leading" secondItem="Zbm-Xp-QBT" secondAttribute="leadingMargin" id="TQ2-ap-9bz"/>
+                            <constraint firstItem="YMV-IP-api" firstAttribute="centerX" secondItem="Zbm-Xp-QBT" secondAttribute="centerX" id="xzP-sM-l17"/>
+                            <constraint firstItem="PqA-u2-FAQ" firstAttribute="top" secondItem="YMV-IP-api" secondAttribute="bottom" constant="30" id="yNv-sL-2GZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="I53-nk-zpP"/>
+                    </view>
+                    <connections>
+                        <outlet property="nextButton" destination="tbe-wM-9k8" id="F0g-qe-nfb"/>
+                        <outlet property="tableView" destination="PqA-u2-FAQ" id="Gpj-98-fIF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zgg-96-4VV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="256.52173913043481" y="73.660714285714278"/>
+        </scene>
+    </scenes>
+</document>
